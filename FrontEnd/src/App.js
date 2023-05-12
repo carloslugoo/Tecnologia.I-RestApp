@@ -1,4 +1,5 @@
 import logo from './pizza_logo.png';
+import PizzaList from'./pizzerias/pizzeriaslist'
 import './App.css';
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p> Web App for Pizza Lovers </p>
         <h1>Pizza vs Pizza</h1>
+        <PizzaList/>
       </header>
     </div>
   );

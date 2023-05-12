@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "logo_image": null,
+        "pizzeria_name": "Pizza Tasty",
+        "city": "Encarnación",
+        "zip_code": 2122
+    },
+    {
+        "id": 3,
+        "logo_image": "http://127.0.0.1:8000/pizzariaImages/pizzalogo.png",
+        "pizzeria_name": "Pizza Encc",
+        "city": "Encarnación",
+        "zip_code": 123
+    },
+    {
+        "id": 4,
+        "logo_image": "http://127.0.0.1:8000/pizzariaImages/pizzalogo.png",
+        "pizzeria_name": "Pizza Hut",
+        "city": "Encarnación",
+        "zip_code": 124
+    }
+]
