@@ -4,6 +4,8 @@ from rest_framework.reverse import reverse
 
 
 class PizzeriaListSerializer(serializers.ModelSerializer):
+    absolute_url = serializers.SerializerMethodField()
+
     class Meta:
         model = Pizzeria
         fields = [
@@ -12,6 +14,7 @@ class PizzeriaListSerializer(serializers.ModelSerializer):
         'pizzeria_name',
         'city',
         'zip_code',
+        'absolute_url',
         ]
     def get_absolute_url(self, obj):
         return reverse('pizzeria_detail',args=(obj.pk,))
