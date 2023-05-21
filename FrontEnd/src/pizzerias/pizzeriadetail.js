@@ -1,6 +1,16 @@
 import React, {Component} from 'react';
-
+import PizzaUpdate from './pizzeriaupdate.js';
 class PizzaDetail extends Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+        showComponent: false,
+        };
+        this.updatePizzeriaDetails = this.updatePizzeriaDetails.bind(this);
+    }
+    updatePizzeriaDetails() {
+        this.setState({ showComponent: true });
+        }
     render(){
         const obj = this.props.pizzariaDetail;
         return(
@@ -12,6 +22,10 @@ class PizzaDetail extends Component{
                 <li>Telefono: {obj.phone_number}</li>
                 <p>{obj.description}</p>
             </ul>
+            <div>
+            <button style={{ backgroundColor: "white" }} onClick={()=> this.updatePizzeriaDetails()}>Actualizar</button>
+            {this.state.showComponent ? <PizzaUpdate pizzariaUpdate={obj}/>: null}
+            </div>
         </div>
         )
     }

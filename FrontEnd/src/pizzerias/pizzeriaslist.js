@@ -48,7 +48,7 @@ class PizzaList extends Component {
             
         <div>
         <PizzaForm/>
-        <h6>Nombres de la pizzeria en .json</h6>
+        <h6>Lista de pizzerias:</h6>
         {this.state.pizzeriasData.map((valor) => {
         return (
         <h3 key={valor.id} onClick={() => this.
