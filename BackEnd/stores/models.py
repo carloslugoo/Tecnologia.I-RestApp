@@ -10,7 +10,7 @@ class Pizzeria(models.Model):
     website = models.URLField(max_length=420, blank=True)
     phone_number = models.CharField(max_length=10, blank=True )
     description = models.TextField(blank=True)
-    logo_image = models.ImageField(upload_to='pizzariaImages', blank=True, default="pizzariaImages/pizzalogo.png" )
+    logo_image = models.ImageField(upload_to='pizzariaImages', blank=True, default="pizzalogo.png" )
     email = models.EmailField(max_length=245, blank=True)
     active = models.BooleanField(default=True)
 

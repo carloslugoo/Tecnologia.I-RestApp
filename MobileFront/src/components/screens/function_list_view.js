@@ -1,9 +1,9 @@
-import { StyleSheet, Text, Image, SafeAreaView, Button, FlatList } from 'react-native';
+import { StyleSheet, Text, Image, SafeAreaView, Button, FlatList, TouchableOpacity } from 'react-native';
 import React, { useState, useEffect } from "react";
-
+import Card from "./shared/card";
 import client from "../../api/client";
 
-const ListView = () => {
+const ListView = ({ navigation }) => {
   const [data, setData] = useState([]);
 
   const getList = async () => {
@@ -30,18 +30,25 @@ const ListView = () => {
         data={data}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
-          <Text style={styles.itemText}>{item.pizzeria_name}, {item.city}</Text>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate("Detail", { objurl: item.absolute_url, hey: "Best Pizza" });
+            }}
+          >
+            <Card logo={item.logo_image} title={item.pizzeria_name} details={item.city} />
+          </TouchableOpacity>
         )}
       />
-      <Button title="Mas detalles.." onPress={() => this.props.navigation.navigate("Detail")} />
+      <Button title="Mas detalles.." onPress={() => navigation.navigate("Detail")} />
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: "#eeeeee",
+    padding: 20,
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
